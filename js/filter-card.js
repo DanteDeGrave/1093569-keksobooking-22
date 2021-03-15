@@ -1,7 +1,7 @@
-const filterForm = document.querySelector('.ad-form');
-const priceInput = filterForm.querySelector('#price');
-const timeIn = filterForm.querySelector('#timein');
-const timeOut = filterForm.querySelector('#timeout');
+const filterCardForm = document.querySelector('.ad-form');
+const priceInput = filterCardForm.querySelector('#price');
+const timeIn = filterCardForm.querySelector('#timein');
+const timeOut = filterCardForm.querySelector('#timeout');
 const price = {
   bungalow: 0,
   flat: 1000,
@@ -9,7 +9,7 @@ const price = {
   palace: 10000,
 }
 
-filterForm.addEventListener('change', (evt) => {
+filterCardForm.addEventListener('change', (evt) => {
   const target = evt.target;
   if (target.id === 'type') {
     priceInput.value = '';
@@ -22,4 +22,6 @@ filterForm.addEventListener('change', (evt) => {
   if (target.id === timeOut.id) {
     timeIn.value = timeOut.value;
   }
-})
+});
+
+export {filterCardForm};
