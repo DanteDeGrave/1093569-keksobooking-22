@@ -6,21 +6,18 @@ const TYPE_APARTMENTS = {
   house:'Дом',
   palace:'Дворец',
 }
-const generationCard = (cardsArray) => {
-  const cardListFragment = document.createDocumentFragment();
-  cardsArray.forEach((element) =>{
-    const cardClone = card.cloneNode(true);
-    fillTitle(cardClone, element);
-    fillAddress(cardClone, element);
-    fillPrice(cardClone, element);
-    fillType(cardClone, element);
-    fillRooms(cardClone, element);
-    fillCheck(cardClone, element);
-    fillFeatures(cardClone, element);
-    fillDescription(cardClone, element);
-    fillPhotos(cardClone, element);
-    cardListFragment.appendChild(cardClone);
-  });
+const generationCard = (apartment) => {
+  const cardClone = card.cloneNode(true);
+  fillTitle(cardClone, apartment);
+  fillAddress(cardClone, apartment);
+  fillPrice(cardClone, apartment);
+  fillType(cardClone, apartment);
+  fillRooms(cardClone, apartment);
+  fillCheck(cardClone, apartment);
+  fillFeatures(cardClone, apartment);
+  fillDescription(cardClone, apartment);
+  fillPhotos(cardClone, apartment);
+  return cardClone;
 };
 
 const fillTitle = (clone, element) => {

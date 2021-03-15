@@ -33,8 +33,8 @@ const getApartment = () => {
       photos:getArrayFeatures(PHOTOS),
     },
     location: {
-      x: getRandomFloat(35.65, 35.7, 5),
-      y: getRandomFloat(139.7, 189.8, 5),
+      x: getRandomFloat(35.65000, 35.70000, 5),
+      y: getRandomFloat(139.70000, 139.80000, 5),
     },
   };
   obj.offer.address = `${obj.location.x}, ${obj.location.y}`;
@@ -45,4 +45,4 @@ for (let i = 0; i < COUNT; i++) {
   apartments.push(getApartment());
 }
 
-generationCard(apartments);
+export {apartments}

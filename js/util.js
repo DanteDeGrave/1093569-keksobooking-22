@@ -25,7 +25,7 @@ const getRandomFloat = (min, max, dec) => {
   if (min >= max || min < 0) {
     throw new Error('Первое значение - минимальное не должно быть больше или равно второго - максимального и числа не могут быть отрицательными');
   }
-  const randomNumber = (Math.random() * (max - min) +1) + min;
+  const randomNumber = (Math.random() * (max - min)) + min;
   return randomNumber.toFixed(dec);
 };
 

@@ -1,5 +1,5 @@
 import {filterCardForm} from './filter-card.js';
-import {filterMapForm} from './filter-map.js'
+import {filterMapForm} from './filter-map.js';
 
 const filterCardFormFieldsets = filterCardForm.querySelectorAll('fieldset');
 const filterMapFormCollection = filterMapForm.children;
@@ -29,4 +29,5 @@ const activationSite = () => {
 }
 
 deactivationSite();
-setTimeout(activationSite, 5000);
+
+export {activationSite};
