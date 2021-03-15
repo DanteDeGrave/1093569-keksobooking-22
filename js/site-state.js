@@ -27,3 +27,6 @@ const activationSite = () => {
     filterMapFormCollection[i].removeAttribute('disabled');
   }
 }
+
+deactivationSite();
+setTimeout(activationSite, 5000);
