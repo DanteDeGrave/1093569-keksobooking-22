@@ -1,5 +1,5 @@
 import {getRandomInt, getRandomFloat, getRandomUniqNumber} from './util.js';
-import {generationCard} from './card-generator.js';
+
 const COUNT = 10;
 const TYPES = ['palace', 'flat', 'house', 'bungalow'];
 const TIMES = ['12:00', '13:00', '14:00'];
