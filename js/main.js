@@ -5,3 +5,4 @@ import './filter-card.js';
 import './filter-map.js';
 import './site-state.js';
 import './map.js';
+import './validation.js';
