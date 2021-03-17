@@ -5,15 +5,20 @@ const timeIn = filterCardForm.querySelector('#timein');
 const timeOut = filterCardForm.querySelector('#timeout');
 const capacity = filterCardForm.querySelector('#capacity');
 const roomNumder = filterCardForm.querySelector('#room_number');
-const capacity1 = capacity.querySelector('option[value = "1"]');
-const capacity2 = capacity.querySelector('option[value = "2"]');
-const capacity3 = capacity.querySelector('option[value = "3"]');
-const capacity0 = capacity.querySelector('option[value = "0"]');
 const price = {
   bungalow: 0,
   flat: 1000,
   house: 5000,
   palace: 10000,
+};
+const chosenRoomGuestCont = {
+  '100': '<option value="0">не для гостей</option>',
+  '1':'<option value="1">для 1 гостя</option>',
+  '2': '<option value="1">для 1 гостя</option> ' +
+    '<option value="2">для 2 гостей</option>',
+  '3':'<option value="3" selected>для 3 гостей</option>' +
+    '<option value="2">для 2 гостей</option>' +
+    '<option value="1">для 1 гостя</option>',
 };
 
 const getPriceTypeOfHousing = (target) => {
@@ -34,26 +39,8 @@ const syncTimeInAndOut = (target) => {
 };
 
 const choiseCountRoomAndGuest = (target) => {
-  if (target.id === roomNumder.id && roomNumder.value === '1') {
-    capacity1.style.display = 'block';
-    capacity2.style.display = 'none';
-    capacity3.style.display = 'none';
-    capacity0.style.display = 'none';
-  } else if (target.id === roomNumder.id && roomNumder.value === '2') {
-    capacity1.style.display = 'block';
-    capacity2.style.display = 'block';
-    capacity3.style.display = 'none';
-    capacity0.style.display = 'none';
-  } else if (target.id === roomNumder.id && roomNumder.value === '3') {
-    capacity0.style.display = 'none';
-    capacity1.style.display = 'block';
-    capacity2.style.display = 'block';
-    capacity3.style.display = 'block';
-  } else if (target.id === roomNumder.id && roomNumder.value === '100') {
-    capacity2.style.display = 'none';
-    capacity3.style.display = 'none';
-    capacity1.style.display = 'none';
-    capacity0.style.display = 'block';
+  if (target.id === roomNumder.id) {
+    capacity.innerHTML = chosenRoomGuestCont[target.value];
   }
 };
 
@@ -61,6 +48,7 @@ filterCardForm.addEventListener('change', (evt) => {
   const target = evt.target;
   getPriceTypeOfHousing(target);
   syncTimeInAndOut(target);
+  choiseCountRoomAndGuest(target);
 });
 
-export {filterCardForm};
+export {filterCardForm, capacity, chosenRoomGuestCont, roomNumder};
