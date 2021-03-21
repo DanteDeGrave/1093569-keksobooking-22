@@ -1,11 +1,11 @@
-import {filterCardForm} from './filter-card.js';
+import {cardForm} from './form-card.js';
 
 const MIN_AD_TITLE_LENGTH = 30;
 const MAX_AD_TITLE_LENGTH = 100;
 const MAX_PRICE_PER_NIGHT = 1000000;
 
-const adTitleInput = filterCardForm.querySelector('#title');
-const pricePerNightInputInput = filterCardForm.querySelector('#price');
+const adTitleInput = cardForm.querySelector('#title');
+const pricePerNightInputInput = cardForm.querySelector('#price');
 
 const validateTitle = () => {
   const titleLength = adTitleInput.value.length;

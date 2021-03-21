@@ -29,5 +29,8 @@ const getRandomFloat = (min, max, dec) => {
   return randomNumber.toFixed(dec);
 };
 
+const isEscEvent = (evt) => {
+  return evt.key === ('Escape');
+};
 
-export {getRandomInt, getRandomFloat, getRandomUniqNumber}
+export {getRandomInt, getRandomFloat, getRandomUniqNumber, isEscEvent}

@@ -1,12 +1,12 @@
-import {filterCardForm} from './filter-card.js';
+import {cardForm, chosenRoomGuestCont, capacity, roomNumder} from './form-card.js';
 import {filterMapForm} from './filter-map.js';
-import {chosenRoomGuestCont, capacity, roomNumder} from './filter-card.js';
 
-const filterCardFormFieldsets = filterCardForm.querySelectorAll('fieldset');
+
+const filterCardFormFieldsets = cardForm.querySelectorAll('fieldset');
 const filterMapFormCollection = filterMapForm.children;
 
 const deactivationSite = () => {
-  filterCardForm.classList.add('ad-form--disabled');
+  cardForm.classList.add('ad-form--disabled');
   filterMapForm.classList.add('ad-form--disabled');
   filterCardFormFieldsets.forEach((element) => {
     element.setAttribute('disabled', 'disabled');
@@ -18,7 +18,7 @@ const deactivationSite = () => {
 }
 
 const activationSite = () => {
-  filterCardForm.classList.remove('ad-form--disabled');
+  cardForm.classList.remove('ad-form--disabled');
   filterMapForm.classList.remove('ad-form--disabled');
   filterCardFormFieldsets.forEach((element) => {
     element.removeAttribute('disabled');

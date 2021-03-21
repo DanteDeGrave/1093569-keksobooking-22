@@ -1,9 +1,9 @@
 /* global L:readonly */
 import {activationSite} from './site-state.js';
-import {filterCardForm} from './filter-card.js';
-import {generationCard} from './card-generator.js'
+import {generationCard} from './card-generator.js';
+import {cardForm} from './form-card.js';
 
-const addressInput = filterCardForm.querySelector('#address');
+const addressInput = cardForm.querySelector('#address');
 const tokyoCenter = {
   lat: 35.6895,
   lng: 139.692,
@@ -75,4 +75,4 @@ const renderMapCards = (dataFromServer) => {
   });
 };
 
-export {renderMapCards};
+export {renderMapCards, tokyoCenter, mainPinMarker, map};
